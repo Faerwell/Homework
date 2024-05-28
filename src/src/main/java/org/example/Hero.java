@@ -1,7 +1,7 @@
 package org.example;
 
 public abstract class Hero implements Mortal {
-    private String name;
+    private final String name;
     private int health;
 
     public Hero(String name, int health) {
@@ -29,10 +29,6 @@ public abstract class Hero implements Mortal {
 
     @Override
     public boolean isAlive() {
-        if (getHealth() > 0 ) {
-            return true;
-        } else {
-            return false;
-        }
+        return (getHealth() > 0);
     }
 }

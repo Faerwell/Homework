@@ -26,17 +26,13 @@ public abstract class Enemy implements Mortal {
     }
 
     public void takeDamage(int damage) {
-        setHealth(getHealth() - damage);
+        health -= damage;
     }
 
     public abstract void attackHero(Hero hero);
 
     @Override
     public boolean isAlive() {
-        if (getHealth() > 0 ) {
-            return true;
-        } else {
-            return false;
-        }
+        return (getHealth() > 0);
     }
 }
